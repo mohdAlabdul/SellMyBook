@@ -59,9 +59,9 @@ session_start();
         <div class="container text-center">
             <?php
             $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected to db");
-            $query = "SELECT * FROM Article Where state='Published'";
+            $query = "SELECT * FROM book ";
             if (isset($_REQUEST["search"])) {
-                $query = "SELECT * FROM Article Where state='Published' AND title LIKE '%" . $_REQUEST["search"] . "%'";
+                $query = "SELECT * FROM Article  AND title LIKE '%" . $_REQUEST["search"] . "%'";
             }
             $result = $db->query($query);
 
@@ -69,13 +69,13 @@ session_start();
             if ($result->num_rows > 0) {
                 // output data of each row
                 while ($row = $result->fetch_assoc()) {
-                    echo '<a class="maincardhover" href="articleDetails.php?articleId=' . $row["article_id"] . '" >
+                    echo '<a class="maincardhover" href="articleDetails.php?articleId=' . $row["book_id"] . '" >
                     <div class="photo-card" style="height:250px;" >
-                    <img class="photo-background" src="data:image/jpg;charset=utf8;base64,' . base64_encode($row['cover_image']) . '"  class="card-img-top" alt="...">
+                    <img class="photo-background" src="data:image/jpg;charset=utf8;base64,' . base64_encode($row['img']) . '"  class="card-img-top" alt="...">
 
                         <div class="photo-details" style="text-align: left;">
-                            <h1 style="color: rgb(0,0,0);" >' . $row["title"] . '</h1>
-                            <p>' . strip_tags(substr($row["body"], 0, 100)) . '....</p>
+                            <h1 style="color: rgb(0,0,0);" >' . $row["Title"] . '</h1>
+                            <p>' . strip_tags(substr($row["description"], 0, 100)) . '....</p>
                         </div>
                     </div>
                 </a>';

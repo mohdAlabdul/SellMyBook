@@ -46,12 +46,12 @@ if (isset($_POST['reg_user'])) {
         $role = mysqli_real_escape_string($db, $_POST['role']);
         echo '<script>alert($role)</script>';
         $isEnabled = "1";
-        $firstTime = "0";
+        
        
         $query =
 
-            "INSERT INTO User(username,  password, role, is_enabled, is_first_time) 
-    VALUES('$username', '$password','$role','$isEnabled','$firstTime')";
+            "INSERT INTO User(username,  password, role, is_enabled) 
+    VALUES('$username', '$password','user','$isEnabled')";
 
         // add to db
 
@@ -78,28 +78,17 @@ if (isset($_POST['login_user'])) {
         $query = "SELECT * FROM User WHERE username='$signinUsername' AND password='$signinPassword'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
-            $userRole = "Reader";
+            $userRole = "user";
             while ($user = $results->fetch_assoc()) {
                 $userRole = $user["role"];
                 if ($user["is_enabled"] == "0") {
                     session_write_close();
-                    if ($userRole == "Journalist" && $user["is_first_time"] == "0")
+                    if ($userRole == "user" && $user["is_enabled"] == "0")
                         header('location: signIn.php?error=Your account is disabled');
-                    else {
-                        header('location: signIn.php?error=Your account needs activation please contact your editor');
-                    }
+                  
                     exit();
                 }
-                if ($user["role"] == "Editor" && $user["is_first_time"] == "1") { //reset password
-                    $_SESSION['username'] = $signinUsername;
-                    $_SESSION["role"] = $userRole;
-
-
-                    session_write_close();
-
-                    header('location: resetPass.php');
-                    exit();
-                }
+               
             }
 
 
