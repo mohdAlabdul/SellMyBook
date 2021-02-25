@@ -42,6 +42,7 @@
                         <?php if ($_SESSION["role"] == "Journalist" || $_SESSION["role"] == "Editor") 
                         echo '<a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none " role="button" href="directToDashboard.php" style="margin-right: 10px;">Dashboard</a>';  ?>
                         <a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none" role="button" href="logout.php">Log out</a>
+                        <a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none" role="button" href="Journalist.php">Manage Books</a>
                     <?php else : ?>
                         <!-- logged in user information -->
 

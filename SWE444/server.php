@@ -80,6 +80,13 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $userRole = "user";
             while ($user = $results->fetch_assoc()) {
+                if($userRole == "admin"){
+                    $_SESSION['username'] = $signinUsername;
+
+                  $_SESSION["role"] = $userRole;
+                     $_SESSION['success'] = "1";
+                     header('location: index.php');   // admin page
+                }
                 $userRole = $user["role"];
                 if ($user["is_enabled"] == "0") {
                     session_write_close();
@@ -98,7 +105,7 @@ if (isset($_POST['login_user'])) {
 
             $_SESSION["role"] = $userRole;
             $_SESSION['success'] = "1";
-            header('location: index.php');
+            header('location: index.php');  // seller page
         } else {
             header('location: signIn.php?error=Wrong username/password');
         }
