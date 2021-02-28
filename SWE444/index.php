@@ -78,6 +78,9 @@ session_start();
                         <div class="photo-details" style="text-align: left;">
                             <h1 style="color: rgb(0,0,0);" >' . $row["Title"] . '</h1>
                             <p>' . strip_tags(substr($row["description"], 0, 100)) . '....</p>
+                            <span style="color:red">Sold by:</span>
+                            <span><b>@'.$row["Seller_user"].'</b></span>
+                            
                         </div>
                     </div>
                 </a>';

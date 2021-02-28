@@ -2,7 +2,7 @@
 session_start();
 include "config.php";
 $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected to db");
-$query = "SELECT * FROM Article Where article_id='" . $_REQUEST["articleId"] . "'";
+$query = "SELECT * FROM article Where article_id='" . $_REQUEST["articleId"] . "'";
 $result = $db->query($query);
 $article;
 if ($result) {
