@@ -8,7 +8,7 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
 
 $artTitle = mysqli_real_escape_string($db, $_POST['artTitle']);
 $artBody = mysqli_real_escape_string($db, $_POST['artBody']);
-
+$authorB = mysqli_real_escape_string($db, $_POST['authorB']);
 
 $username = $_SESSION["username"];
 
@@ -38,7 +38,7 @@ $imgContent = addslashes(file_get_contents($image));
 if (count($errors) == 0) {
 
 
-    $query = "INSERT INTO book(Seller_user,Title,description,img,state) VALUES('$username','$artTitle','$artBody','$imgContent','Saved')";
+    $query = "INSERT INTO book(Seller_user,Title,description,img,state,author) VALUES('$username','$artTitle','$artBody','$imgContent','Saved','$authorB')";
 
     if (isset($_POST["update"])) {
         $artId = mysqli_real_escape_string($db, $_POST['articleId']);

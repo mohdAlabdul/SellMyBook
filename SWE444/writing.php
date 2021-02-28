@@ -69,14 +69,16 @@ include "checkJournalistSignedIn.php";
     } else {
         echo '    
         <form action="postArticle.php" method="post" enctype="multipart/form-data" >
-        <p class="text-center" style="margin: 20px 0px 0px 0px;">Title of the book&nbsp;</p>
-        <input class="form-control" type="text" placeholder="Title" name="artTitle" style="margin: 20px 40%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
-        <p class="text-center">Add Cover image For your book</p>
-        <div class="edit-space">
-            <input type="file" name="image" required>
-            <img class="img-fluid" style="margin-bottom: 10px;" id="img-prev" src="">
-            <textarea style="height: 50%;"  name="artBody" placeholder="Your description goes here" ></textarea>
-            <button class="btn btn-primary" id="save-btn" type="submit" style="margin: 10px 0px;" name="save" value="Save">Save</button>
+        <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the title of the book&nbsp;</b></p>
+        <input class="form-control" type="text" placeholder="Title" name="artTitle" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
+        <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the Author of the book&nbsp;</b></p>
+        <input class="form-control" type="text" placeholder="author" name="authorB" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
+        <p style="margin: 40px 0px 0px 20px; text-align:left;">Add Cover image For your book</p>
+        <div>
+            <input style="margin: 10px 0px 0px 20px; text-align:left;"type="file" name="image" required>
+            <img class="img-fluid" style="margin-bottom: 60px;" id="img-prev" src="">
+            <textarea style="margin: 40px 0px 0px 20px; text-align:left;width:20%;height:auto;"  name="artBody" placeholder="Your description goes here" ></textarea>
+            <button class="btn btn-primary" id="save-btn" type="submit" style="margin: 10px 0px 20px 0px;" name="save" value="Save">Save</button>
         </div>
 
     </form>';
