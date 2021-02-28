@@ -41,6 +41,7 @@ if (count($errors) == 0) {
     $query = "INSERT INTO book(Seller_user,Title,description,img,state,author) VALUES('$username','$artTitle','$artBody','$imgContent','Saved','$authorB')";
 
     if (isset($_POST["update"])) {
+       
         $artId = mysqli_real_escape_string($db, $_POST['articleId']);
 
         $query = "UPDATE book SET Title='$artTitle',description= '$artBody',img='$imgContent' WHERE article_id='$artId'";

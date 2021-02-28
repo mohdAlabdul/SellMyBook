@@ -116,39 +116,7 @@ include "checkJournalistSignedIn.php";
         $notedResult = $db->query($notedQuery);
         $savedResult = $db->query($savedQuery);
         if ($result1->num_rows > 0 || $notedResult->num_rows > 0 || $savedResult->num_rows > 0) {
-            // output data of each row
-            // noted articles
-            while ($row = $notedResult->fetch_assoc()) {
-                $link = "journalistManageArticle.php?articleId=" . $row["book_id"] . "&choice=";
-                echo '        <div class="col mb-3">
-                     <div class="card cardHover shadow-md" >
-                    <img src="data:image/jpg;base64,' . base64_encode($row['img']) . '" style="height:189px;  width:275px;" class="card-img-top" alt="...">
-                    <div class="card-body" style="height:210px;">
-                        <h5 class="card-title">' . $row["Title"] . '</h5>
-                        <hr>
-                        <div class="row">
-                        <h6 class="card-title col-sm-8" style="color:red;">Needs modification</h6>
-                         
-                        <svg width="4em" height="20px" style="color:red;" viewBox="0 0 16 16" class="bi bi-chat-left-dots" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-  <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-</svg></span> 
-</div>
-                        <button onclick=" window.location.href = \' articleDetails.php?articleId=' . $row["book_id"] . ';\'" type="button" class="btn btn-outline-primary">Open</button>
-                        <button onclick="if(showConfirm(\'Are you sure you want to publish ? \'))  window.location.href =\'' . $link . 'publish\' " type="button" class="btn btn-outline-success">Publish</button>
-                        <button onclick="window.location.href=\'' . $link . 'edit\'" type="button" class="btn btn-outline-secondary"><svg width="1em" height="23px" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                      </svg></button>
-                        <button  onclick="if(showConfirm(\'Are you sure you want to delete ? \')) window.location.href=\'' . $link . 'delete\'"  type="button" class="btn btn-outline-danger"><svg width="1em" height="23px" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                      </svg></button>
-                    </div>
-                </div>         </div>
-                ';
-            }
-            // saved articles
+           
             while ($row = $savedResult->fetch_assoc()) {
                 $link = "journalistManageArticle.php?articleId=" . $row["book_id"] . "&choice=";
                 echo '<div class="col mb-3" >
@@ -158,9 +126,8 @@ include "checkJournalistSignedIn.php";
                         <h5 class="card-title">' . $row["Title"] . '</h5>
                         
                         <hr>
-                        <h6 class="card-title" style="color:#3377FF;">' . $row["state"] . '</h6>
+                        <h6 class="card-title" style="color:#3377FF;">' . "Sent" . '</h6>
                         <button onclick=" window.location.href = \' articleDetails.php?articleId=' . $row["book_id"] . ';\'" type="button" class="btn btn-outline-primary">Open</button>
-                        <button onclick="if(showConfirm(\'Are you sure you want to publish ? \'))  window.location.href =\'' . $link . 'publish\' " type="button" class="btn btn-outline-success">Publish</button>
                         <button onclick="window.location.href=\'' . $link . 'edit\'" type="button" class="btn btn-outline-secondary"><svg width="1em" height="23px" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -173,24 +140,7 @@ include "checkJournalistSignedIn.php";
                 </div>         </div>
                 ';
             }
-            // published or process articles
-            while ($row = $result1->fetch_assoc()) {
-                $link = "editorManageArticle.php?articleId=" . $row["book_id"] . "&choice=";
-                $color = $row["state"] == "Process" ? "orange" : "green";
-                echo '        <div class="col mb-3">
-                     <div class="card cardHover shadow-md"   >
-                    <img src="data:image/jpg;charset=utf8;base64,' . base64_encode($row['img']) . '" style="height:189px;  width:275px;" class="card-img-top" alt="...">
-                    <div class="card-body" style="height:210px;">
-                        <h5 class="card-title">' . $row["Title"] . '</h5>
-                        <hr>
-                        <h6 class="card-title" style="color:' . $color . ';">' . $row["state"] . '</h6>
-
-                        <button onclick="window.location.href = \' articleDetails.php?articleId=' . $row["book_id"] . ';\'" type="button" class="btn btn-outline-primary">open</button>
-                    </div>
-                </div>
-                </div>
-                ';
-            }
+           
         } else {
             echo "<h5 style='margin:20px;'>No Books</h5>";
         }
