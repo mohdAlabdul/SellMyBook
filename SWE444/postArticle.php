@@ -38,7 +38,7 @@ $imgContent = addslashes(file_get_contents($image));
 if (count($errors) == 0) {
 
 
-    $query = "INSERT INTO book(seller_user,Title,description,img,state) VALUES('$username','$artTitle','$artBody','$imgContent','Saved')";
+    $query = "INSERT INTO book(Seller_user,Title,description,img,state) VALUES('$username','$artTitle','$artBody','$imgContent','Saved')";
 
     if (isset($_POST["update"])) {
         $artId = mysqli_real_escape_string($db, $_POST['articleId']);

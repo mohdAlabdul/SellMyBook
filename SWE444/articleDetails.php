@@ -53,14 +53,14 @@ if ($result) {
 
 
     <section id="articalSec" class="prevSec shadow-sm">
-        <h1 class="text-4xl" style="margin-bottom: 15px;"><?php echo $article["title"]; ?></h1>
-        <p style="color: rgb(91,91,91);">Written by <?php echo $article["writer_username"]; ?></p>
-        <img <?php echo 'src="data:image/jpg;charset=utf8;base64,' . base64_encode($article['cover_image']) . '"'; ?> style="max-height:400px;" ; class="card-img-top" alt="...">
+        <h1 class="text-4xl" style="margin-bottom: 15px;"><?php echo $book["Title"]; ?></h1>
+        <p style="color: rgb(91,91,91);">Written by <?php echo $book["Seller_user"]; ?></p>
+        <img <?php echo 'src="data:image/jpg;charset=utf8;base64,' . base64_encode($book['img']) . '"'; ?> style="max-height:400px;" ; class="card-img-top" alt="...">
         <div class="articalText">
 
             <p>
 
-                <?php echo $article["body"]; ?>
+                <?php echo $book["description"]; ?>
             </p>
 
 
