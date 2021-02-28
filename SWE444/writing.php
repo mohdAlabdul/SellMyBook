@@ -57,7 +57,7 @@ include "checkJournalistSignedIn.php";
 
 
         <div class="edit-space">
-            <input type="file" name="image" value="" required>
+            <input type="file" name="image" value="" required> 
             <img style="width:50%; height:20%; margin:15px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($article['img']) . '" class="card-img-top" alt="...">
             <textarea style="height: 50%;" id="editor" name="artBody" placeholder="Your article goes here">' . str_replace('&', '&amp;', $article["description"]) . '</textarea>
             <button class="btn btn-primary" id="save-btn" type="submit" style="margin: 10px 0px;" name="update" value="Save">Save</button>

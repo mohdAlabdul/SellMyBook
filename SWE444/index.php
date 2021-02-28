@@ -65,6 +65,8 @@ session_start();
             }
             $result = $db->query($query);
 
+        
+
 
             if ($result->num_rows > 0) {
                 // output data of each row
