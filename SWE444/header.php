@@ -39,7 +39,7 @@
 
                     <?php if (isset($_SESSION['username'])) : ?>
                         <span class="login" style="color: #ffffff;background: #000000;">Welcome, <?php echo $_SESSION['username']; ?></span>
-                        <?php if ($_SESSION["role"] == "user" ) 
+                        <?php if ($_SESSION["role"] == "user") 
                         echo '<a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none " role="button" href="directToDashboard.php" style="margin-right: 10px;">Dashboard</a>';  ?>
                         <a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none" role="button" href="logout.php">Log out</a>
                         <a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none" role="button" href="Journalist.php">Manage Books</a>
