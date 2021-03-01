@@ -2,12 +2,13 @@
 session_start();
 include "config.php";
 $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected to db");
-$query = "SELECT * FROM article Where article_id='" . $_REQUEST["articleId"] . "'";
+$query = "SELECT * FROM book Where book_id='" . $_REQUEST["articleId"] . "'";
+
 $result = $db->query($query);
 $article;
 if ($result) {
 
-    $article = $result->fetch_assoc();
+    $book = $result->fetch_assoc();
 }
 ?>
 <!DOCTYPE html>
@@ -54,7 +55,7 @@ if ($result) {
 
     <section id="articalSec" class="prevSec shadow-sm">
         <h1 class="text-4xl" style="margin-bottom: 15px;"><?php echo $book["Title"]; ?></h1>
-        <p style="color: rgb(91,91,91);">Written by <?php echo $book["Seller_user"]; ?></p>
+        <p style="color: rgb(91,91,91);">Sold by <b>@<?php echo $book["Seller_user"]; ?></b></p>
         <img <?php echo 'src="data:image/jpg;charset=utf8;base64,' . base64_encode($book['img']) . '"'; ?> style="max-height:400px;" ; class="card-img-top" alt="...">
         <div class="articalText">
 
