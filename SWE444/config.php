@@ -2,4 +2,4 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "vote news";
+$dbname = "vote_news";
