@@ -78,7 +78,7 @@ include "checkJournalistSignedIn.php";
             <input style="margin: 10px 0px 0px 20px; text-align:left;"type="file" name="image" required>
             <img class="img-fluid" style="margin-bottom: 60px;" id="img-prev" src="">
             <textarea style="margin: 40px 0px 0px 20px; text-align:left;width:20%;height:auto;"  name="artBody" placeholder="Your description goes here" ></textarea>
-            <button class="btn btn-primary" id="save-btn" type="submit" style="margin: 10px 0px 20px 0px;" name="save" value="Save">Save</button>
+            <button class="btn btn-primary" id="save-btn" type="submit" style="margin: 10px 0px 20px 0px;" name="save" value="Save">Post</button>
         </div>
 
     </form>';

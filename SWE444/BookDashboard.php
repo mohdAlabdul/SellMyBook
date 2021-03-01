@@ -81,7 +81,7 @@ include "checkJournalistSignedIn.php";
 
         </div>
         <div class="col-sm-11">
-            <button type="button" onclick="window.location.href='writing.php'" style="margin-left:15px; margin-top: 20px;" class="btn btn-dark">Add Book</button>
+            <button type="button" onclick="window.location.href='writing.php'" style="margin-left:-100px; margin-top: 20px;" class="btn btn-dark">Add Book</button>
 
         </div>
     </div>
@@ -126,7 +126,7 @@ include "checkJournalistSignedIn.php";
                         <h5 class="card-title">' . $row["Title"] . '</h5>
                         
                         <hr>
-                        <h6 class="card-title" style="color:#3377FF;">' . "Sent" . '</h6>
+                        <h6 class="card-title" style="color:#3377FF;">' . "Posted" . '</h6>
                         <button onclick=" window.location.href = \' articleDetails.php?articleId=' . $row["book_id"] . ';\'" type="button" class="btn btn-outline-primary">Open</button>
                         <button onclick="window.location.href=\'' . $link . 'edit\'" type="button" class="btn btn-outline-secondary"><svg width="1em" height="23px" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
