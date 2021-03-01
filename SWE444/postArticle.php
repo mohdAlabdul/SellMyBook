@@ -48,11 +48,11 @@ if (count($errors) == 0) {
     }
     $result = mysqli_query($db, $query);
     mysqli_close($db);
-
-    header("location:journalistDashboard.php");
+     
+    header("location:BookDashboard.php");
 } else {
     
     error_reporting(E_ALL);
-    header("location:journalistDashboard.php?error=1");
+    header("location:BookDashboard.php?error=1");
 
 }

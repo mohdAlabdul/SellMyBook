@@ -13,7 +13,7 @@ if ($choice == "delete") {
     } else {
         $error = "1";
     }
-    header("location: journalistDashboard.php?error=" . $error);
+    header("location: BookDashboard.php?error=" . $error);
 } else if ($choice == "edit") {
     header("location: writing.php?articleId=" . $articleId);
 } else if ($choice == "publish") {
@@ -24,5 +24,5 @@ if ($choice == "delete") {
     } else {
         $error = "1";
     }
-    header("location: journalistDashboard.php?error=" . $error);
+    header("location: BookDashboard.php?error=" . $error);
 }

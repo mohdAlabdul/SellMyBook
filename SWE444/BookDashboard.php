@@ -30,7 +30,7 @@ include "checkJournalistSignedIn.php";
     <script>
         function search() {
             let keyword = $("#search-field").val();
-            window.location.href = "journalistDashboard.php?search=" + keyword;
+            window.location.href = "BookDashboard.php?search=" + keyword;
 
         }
 
