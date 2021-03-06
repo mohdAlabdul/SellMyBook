@@ -51,12 +51,15 @@ include "checkJournalistSignedIn.php";
 
         echo '  
           <form action="postArticle.php" method="post" enctype="multipart/form-data" >
-        <p class="text-center" style="margin: 20px 0px 0px 0px;">Title of the book&nbsp;</p>
-        <input class="form-control" value="' . $article["Title"] . '" type="text" placeholder="Title" name="artTitle" style="margin: 20px 40%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
-        <p class="text-center">Add Cover image For your Book</p>
+        <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the title of the book&nbsp;</b></p>
+        <input class="form-control" type="text" placeholder="Title" value="'. $article["Title"] .'" name="artTitle" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
+        <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the Author of the book&nbsp;</b></p>
+        <input class="form-control" type="text" placeholder="author" name="authorB" value="'. $article["author"] . '" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
+        <p style="margin: 40px 0px 0px 20px; text-align:left;">Add Cover image For your book</p>
+       
 
 
-        <div class="edit-space">
+        <div style="margin: 40px 0px 0px 20px; text-align:left;">
             <input type="file" name="image" value="" required> 
             <img style="width:50%; height:20%; margin:15px;" src="data:image/jpg;charset=utf8;base64,' . base64_encode($article['img']) . '" class="card-img-top" alt="...">
             <textarea style="height: 50%;" id="editor" name="artBody" placeholder="Your article goes here">' . str_replace('&', '&amp;', $article["description"]) . '</textarea>
