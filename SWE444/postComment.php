@@ -8,7 +8,7 @@ $comment = mysqli_real_escape_string($db, $_POST['comment']);
 $articleId = mysqli_real_escape_string($db, $_POST['articleId']);
 $username = $_SESSION["username"];
 
-//
+
 
 $query = "INSERT INTO comment(article_id,comment_username,comment) VALUES('$articleId','$username','$comment')";
 $result = mysqli_query($db, $query);
