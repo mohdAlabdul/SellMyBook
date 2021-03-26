@@ -55,6 +55,8 @@ include "checkJournalistSignedIn.php";
         <input class="form-control" type="text" placeholder="Title" value="'. $article["Title"] .'" name="artTitle" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
         <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the Author of the book&nbsp;</b></p>
         <input class="form-control" type="text" placeholder="author" name="authorB" value="'. $article["author"] . '" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
+        <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the price of the book&nbsp;</b></p>
+        <input class="form-control" type="text" placeholder="price" name="price" value="'. $article["price"] . '" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
         <p style="margin: 40px 0px 0px 20px; text-align:left;">Add Cover image For your book</p>
        
 
@@ -76,6 +78,8 @@ include "checkJournalistSignedIn.php";
         <input class="form-control" type="text" placeholder="Title" name="artTitle" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
         <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the Author of the book&nbsp;</b></p>
         <input class="form-control" type="text" placeholder="author" name="authorB" style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
+        <p style="margin: 40px 0px 0px 20px; text-align:left;"><b>Enter the price of the book&nbsp;</b></p>
+        <input class="form-control" type="text" placeholder="price" name="price"   style="margin: 10px 0.5%;width: 277px;border-style: solid;border-radius: 10px;padding: 0px 10px;">
         <p style="margin: 40px 0px 0px 20px; text-align:left;">Add Cover image For your book</p>
         <div>
             <input style="margin: 10px 0px 0px 20px; text-align:left;"type="file" name="image" required>

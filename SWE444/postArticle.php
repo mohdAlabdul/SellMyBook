@@ -9,6 +9,7 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
 $artTitle = mysqli_real_escape_string($db, $_POST['artTitle']);
 $artBody = mysqli_real_escape_string($db, $_POST['artBody']);
 $authorB = mysqli_real_escape_string($db, $_POST['authorB']);
+$price = mysqli_real_escape_string($db, $_POST['price']);
 
 $username = $_SESSION["username"];
 
@@ -37,13 +38,13 @@ $imgContent = addslashes(file_get_contents($image));
 if (count($errors) == 0) {
     
 
-    $query = "INSERT INTO book(Seller_user,Title,description,img,state,author) VALUES('$username','$artTitle','$artBody','$imgContent','Saved','$authorB')";
+    $query = "INSERT INTO book(Seller_user,Title,description,img,state,author,price) VALUES('$username','$artTitle','$artBody','$imgContent','Saved','$authorB','$price')";
 
     if (isset($_POST["articleId"])) {
       
         $artId = mysqli_real_escape_string($db, $_POST["articleId"]);
 
-        $query = "UPDATE book SET Title='$artTitle', description= '$artBody',img='$imgContent' , author='$authorB' WHERE book_id='$artId'";
+        $query = "UPDATE book SET Title='$artTitle', description= '$artBody',img='$imgContent' , author='$authorB' ,price='$price' WHERE book_id='$artId'";
     
     } 
     

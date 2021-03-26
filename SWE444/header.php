@@ -41,6 +41,12 @@
                         <span class="login" style="color: #ffffff;background: #000000;">Welcome, <?php echo $_SESSION['username']; ?></span>
                         <?php if ($_SESSION["role"] == "user"){
                         echo '<a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none " role="button" href="directToDashboard.php" style="margin-right: 10px;">Dashboard</a>';  }?>
+                        
+
+                        <?php if ($_SESSION["role"] == "admin"){
+                        echo '<a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none " role="button" href="editorDashboard.php" style="margin-right: 10px;">Dashboard</a>';  }?>
+                        
+                      
                         <a class="btn btn-light action-button transform hover:scale-110 motion-reduce:transform-none" role="button" href="logout.php">Log out</a>
                     <?php else : ?>
                         <!-- logged in user information -->

@@ -63,9 +63,9 @@ session_start();
     <div class="container text-center">
         <?php
         $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected to db");
-        $query = "SELECT * FROM book ";
+        $query = "SELECT * FROM book  INNER JOIN user ON book.Seller_user = user.username WHERE user.is_enabled = '1' ";
         if (isset($_REQUEST["search"])) {
-            $query = "SELECT * FROM Article  AND title LIKE '%" . $_REQUEST["search"] . "%'";
+            $query = "SELECT * FROM book WHERE Title LIKE '%".$_REQUEST["search"]."%' ";
         }
         $result = $db->query($query);
 
@@ -83,6 +83,7 @@ session_start();
                         <h1 style="color: rgb(0,0,0);" >' . $row["Title"] . '</h1>
                         <p>Author: '.$row["author"].'</p>
                         <p>' . strip_tags(substr($row["description"], 0, 100)) . '....</p>
+                        <p>price: '.$row["price"].'</p>
                         <span style="color:red">Sold by:</span>
                         <span><b>@'.$row["Seller_user"].'</b></span>
                         

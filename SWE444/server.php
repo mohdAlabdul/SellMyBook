@@ -75,17 +75,18 @@ if (isset($_POST['login_user'])) {
         array_push($errors, "Password is required");
     }
     if (count($errors) == 0) {
-        $query = "SELECT * FROM User WHERE username='$signinUsername' AND password='$signinPassword'";
+        $query = "SELECT * FROM user WHERE username='$signinUsername' AND password='$signinPassword'  ";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
-            $userRole = "user";
-            while ($user = $results->fetch_assoc()) {
+            $user = $results->fetch_assoc();
+            $userRole = $user["role"];
+           
                 if($userRole == "admin"){
                     $_SESSION['username'] = $signinUsername;
 
                   $_SESSION["role"] = $userRole;
                      $_SESSION['success'] = "1";
-                     header('location: index.php');   // admin page
+                     header('location: index.php');    exit(); // admin page
                 }
                 $userRole = $user["role"];
                 if ($user["is_enabled"] == "0") {
@@ -96,8 +97,7 @@ if (isset($_POST['login_user'])) {
                     exit();
                 }
                
-            }
-
+            
 
 
 
