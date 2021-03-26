@@ -87,7 +87,7 @@ if ($result) {
         <h1 class="text-4xl" style="margin: 5px;">Comments</h1>
 
         <?php
-        $query = "SELECT * FROM Comment Where article_id='" . $_REQUEST["articleId"] . "'";
+        $query = "SELECT * FROM comment INNER JOIN user ON comment.comment_username = user.username WHERE user.is_enabled = '1' AND comment.article_id='" . $_REQUEST["articleId"] . "' ";
         // $result = mysqli_query($db, $query);
         $result = $db->query($query);
 
