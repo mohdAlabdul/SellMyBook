@@ -82,7 +82,7 @@ session_start();
                     <div class="photo-details" style="text-align:left;">
                         <h1 style="color: rgb(0,0,0);" >' . $row["Title"] . '</h1>
                         <p>Author: '.$row["author"].'</p>
-                        <p>' . strip_tags(substr($row["description"], 0, 10)) . '....</p>
+                        <p class="warpText">' . strip_tags(substr($row["description"], 0,25)) . '....</p>
                         <p class="price-tag">Price: '.$row["price"].'</p>
                         <span class = "seller">Sold by: @'.$row["Seller_user"].'</span>
                         

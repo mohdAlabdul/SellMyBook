@@ -31,3 +31,7 @@ div .price-tag{
     
   }
 
+  .warpText{
+    word-wrap: break-word;
+  }
+
