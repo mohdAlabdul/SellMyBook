@@ -59,7 +59,7 @@ if ($result) {
         <img <?php echo 'src="data:image/jpg;charset=utf8;base64,' . base64_encode($book['img']) . '"'; ?> style="max-height:400px;" ; class="card-img-top" alt="...">
         <div class="articalText">
 
-            <p>
+            <p class = "desc">
 
                 <?php echo $book["description"]; ?>
             </p>

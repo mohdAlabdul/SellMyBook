@@ -37,6 +37,7 @@
 .articalText{
   margin-top: 10px;
   height: 70px;
+  word-wrap: break-word; 
 }
 .articalCover{
   background-repeat: no-repeat;
@@ -167,6 +168,8 @@
 .articalText {
   height: auto;
   width: auto;
+  word-wrap: break-word; 
+  
 }
 
 #img-prev {

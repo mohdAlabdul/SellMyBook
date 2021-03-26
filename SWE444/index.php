@@ -23,6 +23,8 @@ session_start();
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="jquery-3.5.1.min.js"></script>
@@ -74,16 +76,15 @@ session_start();
             // output data of each row
             while ($row = $result->fetch_assoc()) {
                 echo '<a class="maincardhover" href="articleDetails.php?articleId=' . $row["book_id"] . '" >
-                <div class="photo-card" style="height:250px;" >
+                <div class="photo-card " style="height:250px;" >
                 <img class="photo-background" src="data:image/jpg;charset=utf8;base64,' . base64_encode($row['img']) . '"  class="card-img-top" alt="...">
-
-                    <div class="photo-details" style="text-align: left;">
+                
+                    <div class="photo-details" style="text-align:left;">
                         <h1 style="color: rgb(0,0,0);" >' . $row["Title"] . '</h1>
                         <p>Author: '.$row["author"].'</p>
-                        <p>' . strip_tags(substr($row["description"], 0, 100)) . '....</p>
-                        <p>price: '.$row["price"].'</p>
-                        <span style="color:red">Sold by:</span>
-                        <span><b>@'.$row["Seller_user"].'</b></span>
+                        <p>' . strip_tags(substr($row["description"], 0, 10)) . '....</p>
+                        <p class="price-tag">Price: '.$row["price"].'</p>
+                        <span class = "seller">Sold by: @'.$row["Seller_user"].'</span>
                         
                     </div>
                 </div>

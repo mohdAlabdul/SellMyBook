@@ -1,0 +1,33 @@
+div .price-tag{
+    background-color: #383e56;
+    border-radius: 30px;
+    text-align: center;
+    padding:5px 5px; 
+    width: 6rem;
+    color: aliceblue;
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    
+  }
+  
+  .articalText .desc{
+    word-wrap: break-word; 
+    padding: 5% 7%;
+    
+    
+  }
+
+  .seller{
+    background-color: #383e56;
+    border-radius: 30px;
+    text-align: center;
+    padding:5px 5px; 
+    width: 9rem;
+    color: aliceblue;
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    
+    
+    
+  }
+
