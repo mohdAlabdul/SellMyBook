@@ -80,10 +80,10 @@ session_start();
                 <img class="photo-background" src="data:image/jpg;charset=utf8;base64,' . base64_encode($row['img']) . '"  class="card-img-top" alt="...">
                 
                     <div class="photo-details" style="text-align:left;">
-                        <h1 style="color: rgb(0,0,0);" >' . $row["Title"] . '</h1>
+                        <h1 style="color: rgb(0,0,0); margin-right: 5px;" >' . strip_tags(substr($row["Title"], 0,25)) . '..</h1>
                         <p>Author: '.$row["author"].'</p>
                         <p class="warpText">' . strip_tags(substr($row["description"], 0,25)) . '....</p>
-                        <p class="price-tag">Price: '.$row["price"].'</p>
+                        <p type ="number" class="price-tag">Price: '.$row["price"].'SAR</p>
                         <span class = "seller">Sold by: @'.$row["Seller_user"].'</span>
                         
                     </div>
