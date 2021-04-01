@@ -15,7 +15,7 @@ $result = mysqli_query($db, $query);
 mysqli_close($db);
 
 if ($result) {
-    header("location:articleDetails.php?bookId=" . $_POST['articleId'] . "&message=Thank you for your comment");
+    header("location:articleDetails.php?articleId=" . $_POST['articleId'] . "&message=Thank you for your comment");
 } else {
    
    header("location:articleDetails.php?bookId=" . $_POST['articleId'] . "&message=An error occur while posting your comment");
