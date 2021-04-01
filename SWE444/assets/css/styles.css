@@ -3,10 +3,10 @@ div .price-tag{
     border-radius: 30px;
     text-align: center;
     padding:5px 5px; 
-    width: 7rem;
+    width: 6rem;
     color: aliceblue;
     font-family: 'Anton', sans-serif;
-    
+    font-size: 15px;
     
   }
   
@@ -22,7 +22,7 @@ div .price-tag{
     border-radius: 30px;
     text-align: center;
     padding:5px 5px; 
-    width: 12rem;
+    width: 9rem;
     color: aliceblue;
     font-family: 'Anton', sans-serif;
     font-size: 15px;
