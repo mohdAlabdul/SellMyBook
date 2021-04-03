@@ -78,8 +78,7 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
                 <img class="photo-background" src="data:image/jpg;charset=utf8;base64,' . base64_encode($row['img']) . '"  class="card-img-top" alt="...">
                     <div class="photo-details" style="text-align:left;">
                         <h1 style="color: rgb(0,0,0); margin-right: 5px;" >' . strip_tags(substr($row["Title"], 0,25)) . '..</h1>
-                        <p style="margin-bottom:20px;">Author: '.$row["author"].'<a style="background: rgb(26, 145, 218) !important;color:white;font-weight:.850em;padding:5pxtext-decoration:none;" class="main_famaily"
-                        href="https://twitter.com/intent/tweet?text=I%20just%20put%20my%20book%20up%20for%20sale%20with%20the%20title: '.$row["Title"].'%0D%0DYou%20Can%20Find%20IT%20IN:%0D' .$_SERVER['HTTP_REFERER'].'article'.$row["book_id"].'&hashtags='.$row["Title"].','. $row["Seller_user"] .'">Tweet</a></p>
+                       
                         <p class="warpText">' . strip_tags(substr($row["description"], 0,25)) . '....</p>
                         <p type ="number" class="price-tag">Price: '.$row["price"].'SAR</p>
                         <span class = "seller">Sold by: @'.$row["Seller_user"].'</span>
