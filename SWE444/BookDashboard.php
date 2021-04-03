@@ -85,7 +85,7 @@ include "checkJournalistSignedIn.php";
 
         </div>
         <div class="col-sm-11">
-            <button type="button" onclick="window.location.href='writing.php'" style="margin-left:-15px; margin-top: 20px;" class="btn btn-dark">Add Book</button>
+            <button type="button" onclick="window.location.href='writing.php'" style="margin-left:15px; margin-top: 20px;" class="btn btn-dark">Add Book</button>
 
         </div>
     </div>
