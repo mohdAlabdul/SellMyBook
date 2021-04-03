@@ -100,6 +100,45 @@ function create_notifcations($db){
     }
   }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+/*
+$get_notifcations = "SELECT * FROM `user_meta` WHERE meta_key='comment_data' AND username='$loged_user'";
+$notifcations_meta = $db->query($get_notifcations);
+if ($notifcations_meta->num_rows > 0) {
+    $zopry = '';
+    // create the comment front end array include url, commenter_name , comment slice
+    while ($row = $notifcations_meta->fetch_assoc()) {
+      // code...
+
+    $comment_meta = explode("_", $row['meta_value']);
+    $comments_length = count($comment_meta);
+    $post_id = $comment_meta[0];
+    $commenter_author = $comment_meta[1];
+    $comment_id = 53;
+
+    $comment_url = get_article_url($post_id);
+
+    // get comment content  SELECT * FROM `comment` ORDER BY `article_id` ASC
+    $comment_query = "SELECT comment FROM `comment` WHERE comment_id='$comment_id'";
+    $comment_content = $db->query($comment_query);
+    $tcomment = $comment_content->fetch_assoc();
+
+
+    print_r($comment_content);
+    }
+}
+    return $zopry;
+} else {
+    return '';
+};
+
+}
+*/
+=======
+>>>>>>> parent of 307bb38 (dcd)
+>>>>>>> b5b9673e3ac8ec54fc75d3399144ce9f708b5e20
 ?>
 
 <head>
