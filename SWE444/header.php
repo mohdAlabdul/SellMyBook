@@ -6,14 +6,6 @@
 <html lang=en>
 
 <?php
-<<<<<<< HEAD
-=======
-
-// get all meta for that user which include the key comment_data to show notifcation
-
-/* this function return the dynamic url for article it accept the post id coming from notifcation meta  */
-
->>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 include "config.php";
 $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected to db");
 
@@ -108,6 +100,7 @@ function create_notifcations($db){
     }
   }
 }
+<<<<<<< HEAD
 /*
 $get_notifcations = "SELECT * FROM `user_meta` WHERE meta_key='comment_data' AND username='$loged_user'";
 $notifcations_meta = $db->query($get_notifcations);
@@ -141,6 +134,8 @@ if ($notifcations_meta->num_rows > 0) {
 
 }
 */
+=======
+>>>>>>> parent of 307bb38 (dcd)
 ?>
 
 <head>
