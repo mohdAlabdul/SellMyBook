@@ -1,5 +1,5 @@
 <?php
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "root";
 $dbname = "vote news";
