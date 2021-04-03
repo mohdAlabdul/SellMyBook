@@ -72,10 +72,6 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
         }
         $result = $db->query($query);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 
 
 /*'<a style="background: rgb(26, 145, 218) !important;color:white;font-weight:.850em;padding:5pxtext-decoration:none;" class="main_famaily"

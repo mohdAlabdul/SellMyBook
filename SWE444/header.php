@@ -108,8 +108,6 @@ function create_notifcations($db){
     }
   }
 }
-<<<<<<< HEAD
-=======
 /*
 $get_notifcations = "SELECT * FROM `user_meta` WHERE meta_key='comment_data' AND username='$loged_user'";
 $notifcations_meta = $db->query($get_notifcations);
@@ -143,7 +141,6 @@ if ($notifcations_meta->num_rows > 0) {
 
 }
 */
->>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 ?>
 
 <head>
@@ -172,11 +169,7 @@ if ($notifcations_meta->num_rows > 0) {
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
         <div class="container">
 
-<<<<<<< HEAD
             <a class="navbar-brand titleFont" href="index.php">SellMyBook</a>
-=======
-            <a class="navbar-brand titleFont" href="index.php"><img style="background-color: white; width: 100px;" src="assets/img/35_Book_Based_Logo_Designs_-_Inspirationfeed.png" alt ="..."></a>
->>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="color: rgb(255,255,255);background: #ffffff;">
                 <span class="sr-only">Toggle navigation</span>
