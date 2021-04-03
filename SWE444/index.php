@@ -12,7 +12,7 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>VBooks</title>
-    <link rel="icon" href="assets/img/webIcon.jpg">
+    <link rel="icon" href="icon.png">
 
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">

@@ -166,7 +166,7 @@ if ($notifcations_meta->num_rows > 0) {
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
         <div class="container">
 
-            <a class="navbar-brand titleFont" href="index.php">SellMyBook</a>
+            <a class="navbar-brand titleFont" href="index.php"><img style="background-color: white; width: 100px;" src="assets/img/35_Book_Based_Logo_Designs_-_Inspirationfeed.png" alt ="..."></a>
 
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="color: rgb(255,255,255);background: #ffffff;">
                 <span class="sr-only">Toggle navigation</span>
