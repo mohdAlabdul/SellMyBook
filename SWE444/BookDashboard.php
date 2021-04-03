@@ -21,11 +21,14 @@ include "checkJournalistSignedIn.php";
     <link rel="stylesheet" href="assets/css/controlcss.css">
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <script src="jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" href="fancyTooltip.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script>
         function search() {
@@ -41,6 +44,10 @@ include "checkJournalistSignedIn.php";
         }
     </script>
     <style>
+        body{
+          margin: 0!important;
+          overflow: hidden !important;
+        }
         .left {
 
             position: relative;
@@ -60,6 +67,8 @@ include "checkJournalistSignedIn.php";
 
 <body>
 
+
+
     <?php include "header.php"; ?>
     <?php
     if (isset($_REQUEST["error"])) {
@@ -73,6 +82,7 @@ include "checkJournalistSignedIn.php";
 </div>';
         }
     }
+
 
     ?>
     <div class="row">
@@ -116,15 +126,20 @@ include "checkJournalistSignedIn.php";
         $notedResult = $db->query($notedQuery);
         $savedResult = $db->query($savedQuery);
         if ($result1->num_rows > 0 || $notedResult->num_rows > 0 || $savedResult->num_rows > 0) {
-           
+
+
+
             while ($row = $savedResult->fetch_assoc()) {
+
+                $twiter_tweet = '<a style="background: rgb(26, 145, 218) !important;color:white;font-weight:.850em;padding:5pxtext-decoration:none;" class="btn btn-outline-danger" href="https://twitter.com/intent/tweet?text=I%20just%20put%20my%20book%20up%20for%20sale%20with%20the%20title: '.$row["Title"].'%0D%0DYou%20Can%20Find%20IT%20IN:%0Dhttp://localhost/' .  $_SERVER['SCRIPT_NAME'] .'%3farticle%3d'.$row["book_id"].'%0D%0D&hashtags='.$row["Title"].','. $row["Seller_user"] .'"><i class="fa fa-twitter" style="font-size:24px;color:white;"></i></a>';
+
                 $link = "journalistManageArticle.php?articleId=" . $row["book_id"] . "&choice=";
                 echo '<div class="col mb-3" >
                      <div class="card cardHover shadow-md" >
                     <img src="data:image/jpg;base64,' . base64_encode($row['img']) . '"  style="height:189px; width:275px;" class="card-img-top" alt="...">
                     <div class="card-body"  style="height:210px;">
                         <h5 class="card-title">' . $row["Title"] . '</h5>
-                        
+
                         <hr>
                         <h6 class="card-title" style="color:#3377FF;">' . "Posted" . '</h6>
                         <button onclick=" window.location.href = \' articleDetails.php?articleId=' . $row["book_id"] . ';\'" type="button" class="btn btn-outline-primary">Open</button>
@@ -135,12 +150,13 @@ include "checkJournalistSignedIn.php";
                         <button  onclick="if(showConfirm(\'Are you sure you want to delete ? \'))  window.location.href=\'' . $link . 'delete\'"  type="button" class="btn btn-outline-danger"><svg width="1em" height="23px" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                      </svg></button>
+                      </svg></button>'. $twiter_tweet.'
+
                     </div>
                 </div>         </div>
                 ';
             }
-           
+
         } else {
             echo "<h5 style='margin:20px;'>No Books</h5>";
         }
@@ -149,7 +165,7 @@ include "checkJournalistSignedIn.php";
 
 
     </div>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </body>
 
