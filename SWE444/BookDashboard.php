@@ -9,7 +9,8 @@ include "checkJournalistSignedIn.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>SellMyBook</title>
-    <link rel="icon" href="assets/img/webIcon.jpg">
+
+    <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/dh-card-image-left-dark.css">
@@ -91,7 +92,7 @@ include "checkJournalistSignedIn.php";
 
         </div>
         <div class="col-sm-11">
-            <button type="button" onclick="window.location.href='writing.php'" style="margin-left:-15px; margin-top: 20px;" class="btn btn-dark">Add Book</button>
+            <button type="button" onclick="window.location.href='writing.php'" style="margin-left:15px; margin-top: 20px;" class="btn btn-dark">Add Book</button>
 
         </div>
     </div>
@@ -131,7 +132,11 @@ include "checkJournalistSignedIn.php";
 
             while ($row = $savedResult->fetch_assoc()) {
 
+<<<<<<< HEAD
                 $twiter_tweet = '<a style="background: rgb(26, 145, 218) !important;color:white;font-weight:.850em;padding:5pxtext-decoration:none;" class="btn btn-outline-danger" href="https://twitter.com/intent/tweet?text=I%20just%20put%20my%20book%20up%20for%20sale%20with%20the%20title: '.$row["Title"].'%0D%0DYou%20Can%20Find%20IT%20IN:%0Dhttp://localhost/' .  $_SERVER['SCRIPT_NAME'] .'%3farticle%3d'.$row["book_id"].'%0D%0D&hashtags='.$row["Title"].','. $row["Seller_user"] .'"><i class="fa fa-twitter" style="font-size:24px;color:white;"></i></a>';
+=======
+                $twiter_tweet = '<a style="background: rgb(26, 145, 218) !important;color:white;font-weight:.850em;padding:5pxtext-decoration:none;" class="btn btn-outline-danger" href="https://twitter.com/intent/tweet?text=I%20just%20put%20my%20book%20up%20for%20sale%20with%20the%20title: '.$row["Title"].'%0D%0DYou%20Can%20Find%20IT%20IN:%0Dhttp://localhost/' .  $_SERVER['SCRIPT_NAME'] .'%3farticle%3d'.$row["book_id"].'%0D%0D&hashtags='.$row["Title"].','. $row["Seller_user"] .'">Tweet</a>';
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 
                 $link = "journalistManageArticle.php?articleId=" . $row["book_id"] . "&choice=";
                 echo '<div class="col mb-3" >
@@ -150,7 +155,11 @@ include "checkJournalistSignedIn.php";
                         <button  onclick="if(showConfirm(\'Are you sure you want to delete ? \'))  window.location.href=\'' . $link . 'delete\'"  type="button" class="btn btn-outline-danger"><svg width="1em" height="23px" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+<<<<<<< HEAD
                       </svg></button>'. $twiter_tweet.'
+=======
+                      </svg></button>'.$twiter_tweet.'
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 
                     </div>
                 </div>         </div>

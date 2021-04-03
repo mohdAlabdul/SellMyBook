@@ -12,7 +12,7 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>VBooks</title>
-    <link rel="icon" href="assets/img/webIcon.jpg">
+    <link rel="icon" href="icon.png">
 
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -23,8 +23,11 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
     <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
+=======
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -69,6 +72,10 @@ $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected t
         }
         $result = $db->query($query);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 
 
 /*'<a style="background: rgb(26, 145, 218) !important;color:white;font-weight:.850em;padding:5pxtext-decoration:none;" class="main_famaily"
@@ -82,7 +89,11 @@ href="https://twitter.com/intent/tweet?text=I%20just%20put%20my%20book%20up%20fo
                 <img class="photo-background" src="data:image/jpg;charset=utf8;base64,' . base64_encode($row['img']) . '"  class="card-img-top" alt="...">
                     <div class="photo-details" style="text-align:left;">
                         <h1 style="color: rgb(0,0,0); margin-right: 5px;" >' . strip_tags(substr($row["Title"], 0,25)) . '..</h1>
+<<<<<<< HEAD
                         <p style="margin-bottom:20px;">Author: '.$row["author"]. '</p>
+=======
+                       
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
                         <p class="warpText">' . strip_tags(substr($row["description"], 0,25)) . '....</p>
                         <p type ="number" class="price-tag">Price: '.$row["price"].'SAR</p>
                         <span class = "seller">Sold by: @'.$row["Seller_user"].'</span>

@@ -6,6 +6,14 @@
 <html lang=en>
 
 <?php
+<<<<<<< HEAD
+=======
+
+// get all meta for that user which include the key comment_data to show notifcation
+
+/* this function return the dynamic url for article it accept the post id coming from notifcation meta  */
+
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 include "config.php";
 $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("not connected to db");
 
@@ -100,6 +108,42 @@ function create_notifcations($db){
     }
   }
 }
+<<<<<<< HEAD
+=======
+/*
+$get_notifcations = "SELECT * FROM `user_meta` WHERE meta_key='comment_data' AND username='$loged_user'";
+$notifcations_meta = $db->query($get_notifcations);
+if ($notifcations_meta->num_rows > 0) {
+    $zopry = '';
+    // create the comment front end array include url, commenter_name , comment slice
+    while ($row = $notifcations_meta->fetch_assoc()) {
+      // code...
+
+    $comment_meta = explode("_", $row['meta_value']);
+    $comments_length = count($comment_meta);
+    $post_id = $comment_meta[0];
+    $commenter_author = $comment_meta[1];
+    $comment_id = 53;
+
+    $comment_url = get_article_url($post_id);
+
+    // get comment content  SELECT * FROM `comment` ORDER BY `article_id` ASC
+    $comment_query = "SELECT comment FROM `comment` WHERE comment_id='$comment_id'";
+    $comment_content = $db->query($comment_query);
+    $tcomment = $comment_content->fetch_assoc();
+
+
+    print_r($comment_content);
+    }
+}
+    return $zopry;
+} else {
+    return '';
+};
+
+}
+*/
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 ?>
 
 <head>
@@ -128,7 +172,11 @@ function create_notifcations($db){
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
         <div class="container">
 
+<<<<<<< HEAD
             <a class="navbar-brand titleFont" href="index.php">SellMyBook</a>
+=======
+            <a class="navbar-brand titleFont" href="index.php"><img style="background-color: white; width: 100px;" src="assets/img/35_Book_Based_Logo_Designs_-_Inspirationfeed.png" alt ="..."></a>
+>>>>>>> bf3c704a83f6829a41f31503ca807d7dfcb49a19
 
             <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1" style="color: rgb(255,255,255);background: #ffffff;">
                 <span class="sr-only">Toggle navigation</span>
